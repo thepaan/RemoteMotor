@@ -28,7 +28,7 @@ struct payload_t {
   unsigned long motorDly;
 };
 
-void send_cmd (void) {
+void sendCmd (void) {
   payload_t payload = { stp, dir, dly };
   RF24NetworkHeader header (remote_node);
   bool ok = network.write(header,&payload,sizeof(payload));
@@ -41,9 +41,9 @@ void send_cmd (void) {
 }
 
 void printData (void) {
-  printf ("Steps: %lu\n", stp);
+  printf ("Step Count: %lu\n", stp);
   printf ("Direction: %lu\n", dir);
-  printf ("Delay: %lu\n", dly);
+  printf ("Step Delay: %lu\n", dly);
   cout << ">";
 }
 
@@ -95,14 +95,14 @@ int main (void) {
         case 'a':
           dir = 0;
           printData();
-          printf ("\nSending Data.\n");
-          send_cmd ();
+          printf ("\nSending data.\n");
+          sendCmd();
         break;
         case 'd':
           dir = 1;
           printData();
-          printf ("Sending Data.\n");
-          send_cmd ();
+          printf ("Sending data.\n");
+          sendCmd();
         break;
       }
     }
