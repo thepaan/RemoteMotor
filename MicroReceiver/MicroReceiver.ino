@@ -43,7 +43,7 @@ void setup() {
 void loop() {
   network.update();
   while (network.available()) {
-    RF24NetworkHeader header;  // What is this?
+    RF24NetworkHeader header;
     payload_t payload;
     network.read(header,&payload,sizeof(payload));
     Serial.print("Step Count: ");
