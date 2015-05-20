@@ -60,41 +60,49 @@ int main (void) {
     getline(cin,cmd);
     if (cmd.length() == 1) {
       switch (cmd[0]) {
-      case 'w':
-        if (dly < 50) {
-          dly = dly + 1;
+        case 'w':
+          if (dly < 50) {
+            dly = dly + 1;
+            printData();
+          } else {
+            printData();
+          }
+        break;
+        case 's':
+          if (dly > 2) {
+            dly = dly - 1;
+            printData();
+          } else {
+            printData();
+          }
+        break;
+        case 'W':
+          if (stp < 2048) {
+            stp = stp + 64;
+            printData();
+          } else {
+            printData();
+          }
+        break;
+        case 'S':
+          if (stp > 64) {
+            stp = stp - 64;
+            printData();
+          } else {
+            printData();
+          }
+        break;
+        case 'a':
+          dir = 0;
           printData();
-        }
+          printf ("\nSending Data.\n");
+          send_cmd ();
         break;
-      case 's':
-        if (dly > 2) {
-          dly = dly - 1;
+        case 'd':
+          dir = 1;
           printData();
-        }
-        break;
-      case 'W':
-        if (stp < 2048) {
-          stp = stp + 64;
-          printData();
-        }
-        break;
-      case 'S':
-        if (stp > 64) {
-          stp = stp - 64;
-          printData();
-        }
-        break;
-      case 'a':
-        dir = 0;
-        printData();
-        printf ("\nSending Data.\n");
-        send_cmd ();
-        break;
-      case 'd':
-        dir = 1;
-        printData();
-        printf ("Sending Data.\n");
-        send_cmd ();
+          printf ("Sending Data.\n");
+          send_cmd ();
         break;
       }
     }
