@@ -14,6 +14,7 @@ RF24Network network(radio);
 const uint16_t local_node = 00;
 const uint16_t remote_node = 01;
 
+// Network data payload format
 struct payload_t {
   unsigned long motorStp;
   unsigned long motorDir;
@@ -86,22 +87,20 @@ void motorTurn (int stp, int dir, int dly) {
     }
   delay(dly);
   }
-  setMotorState(0, 0, 0, 0);
-  lastMotorState = cStep;
-  Serial.print("Motor State: ");
-  Serial.println(lastMotorState);
+  setMotorState(0, 0, 0, 0);  // Set all pins low while not actively turning the motor
+  lastMotorState = cStep;     // Save the pin state in case of odd numbered steps
 }
 
-// Function to set the motor pins state
+// Function to set the state of the motor pins
 void setMotorState (byte p0S, byte p1S, byte p2S, byte p3S) {
   byte motorState[4] = {p0S, p1S, p2S, p3S};
   for (byte thisPin = 0; thisPin < pinCount; thisPin++) {
     if (motorState[thisPin] == 0) {
       digitalWrite(motorPins[thisPin], LOW);
-   } else if (motorState[thisPin] == 1) {
+    } else if (motorState[thisPin] == 1) {
       digitalWrite(motorPins[thisPin], HIGH);
     } else {
-      Serial.println("Invalid seMotorState argument.");
+      Serial.println("Invalid setMotorState argument.");
     }
   }
 }
