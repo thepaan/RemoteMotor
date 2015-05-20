@@ -1,4 +1,4 @@
-## RemoteFocus
+## RemoteMotor
 This project is for remotely controlling a motor attached to an arduino via an nRF24 module.
 
 ####Requirements
