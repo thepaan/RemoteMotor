@@ -1,5 +1,5 @@
 ## RemoteMotor
-This project is for remotely controlling a motor attached to an arduino via an nRF24 module.
+This project is for remotely controlling a motor attached to an arduino via an nRF24 module. The programming is based on the getting started scenarios in the nRF24 libraries by TMRh20.
 
 ####Requirements
 The following libraries are required for this project:
