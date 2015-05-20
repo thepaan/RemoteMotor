@@ -16,7 +16,7 @@ The following hardware configuration was used:
 * pin 23 (GPIO11, SCLK) <-> pin 5 (SCK)
 * pin 19 (GPIO10, MOSI) <-> pin 6 (MOSI)
 * pin 21 (GPIO9, MISO) <-> pin 7 (MISO)
-* 
+
 ######Arduino Micro <-> nRF24
 * gnd pin <-> pin 1 (gnd)
 * 3v3 pin <-> pin 2 (vcc)
