@@ -26,7 +26,7 @@ The following hardware configuration was used:
 * MOSI pin <-> pin 6 (MOSI)
 * MISO pin <-> pin 7 (MISO)
 
-######Arduino Micro <-> ULN2003 bipolar motor controller
+######Arduino Micro <-> ULN2003 unipolar motor controller
 The ULN2003 should be powered externally as the Micro is unable to source the required current.
 * pin 4 <-> pin 1
 * pin 5 <-> pin 2
